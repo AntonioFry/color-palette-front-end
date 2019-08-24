@@ -1,14 +1,14 @@
 import {combineReducers} from 'redux';
 import { isLoadingReducer } from './isLoadingReducer';
 import { throwErrorReducer } from './throwErrorReducer';
-import { projectReducer } from './projectReducer';
-import { paletteReducer } from './paletteReducer';
+import { projectsReducer } from './projectsReducer';
+import { palettesReducer } from './palettesReducer';
+import { searchReducer } from './searchReducer';
 
 export const rootReducer = combineReducers({
   isloading: isLoadingReducer,
   throwError: throwErrorReducer,
-  projects: projectReducer,
-  palettes: paletteReducer
+  projects: projectsReducer,
+  palettes: palettesReducer,
+  search: searchReducer
 })
-
-//add user reducer, search query later
