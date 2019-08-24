@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { getProjects, getPalettes } from '../../../API/apiCalls';
 import './App.css';
 
 class App extends Component {
@@ -10,8 +10,13 @@ class App extends Component {
     }
   }
   
-  componentDidMount() {
-    
+  componentDidMount = async () => {
+    try {
+      const projects = await getProjects();
+      const palettes = await getPalettes();
+    } catch (error) {
+      throw new Error(`failed to fetch: ${error.message}`)
+    }
   }
 
   render() {

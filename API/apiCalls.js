@@ -1,4 +1,4 @@
-const getProjects = async () => {
+export const getProjects = async () => {
   try {
     const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/projects');
     const result =  await response.json();
@@ -9,7 +9,7 @@ const getProjects = async () => {
   }
 }
 
-const getPalettes = async () => {
+export const getPalettes = async () => {
   try {
     const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes');
     const result = await response.json();
@@ -20,7 +20,7 @@ const getPalettes = async () => {
   }
 }
 
-const postProject = async (project) => {
+export const postProject = async (project) => {
   const option = {
     method: 'POST',
     body: {
@@ -36,7 +36,7 @@ const postProject = async (project) => {
   }
 }
 
-const postPalette = async (palette) => {
+export const postPalette = async (palette) => {
   const option = {
     method: 'POST',
     body: {
@@ -51,15 +51,7 @@ const postPalette = async (palette) => {
   }
 }
 
-const patchProject = async () => {
-  try {
-    
-  } catch (error) {
-
-  }
-}
-
-const patchPalette = async () => {
+export const patchProject = async () => {
   try {
 
   } catch (error) {
@@ -67,7 +59,7 @@ const patchPalette = async () => {
   }
 }
 
-const deleteProject = async () => {
+export const patchPalette = async () => {
   try {
 
   } catch (error) {
@@ -75,7 +67,15 @@ const deleteProject = async () => {
   }
 }
 
-const deletePalette = async () => {
+export const deleteProject = async () => {
+  try {
+
+  } catch (error) {
+
+  }
+}
+
+export const deletePalette = async () => {
   try {
 
   } catch (error) {
