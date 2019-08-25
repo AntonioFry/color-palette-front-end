@@ -2,9 +2,13 @@ import React from 'react';
 
 export const Project = ({ projectName }) => {
   return (
-    <div>
+    <article>
       <h3>{projectName}</h3>
 
-    </div>
+    </article>
   )
 }
+
+export const mapStateToProps = (store) => ({
+  palettes: store.palettes
+})

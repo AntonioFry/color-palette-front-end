@@ -2,12 +2,13 @@ import React from 'react';
 
 export const Palette = () => {
   return (
-    <div>
+    <article>
       <div className="color"></div>
       <div className="color"></div>
       <div className="color"></div>
       <div className="color"></div>
       <div className="color"></div>
-    </div>
+      <button>Delete</button>
+    </article>
   )
 }
