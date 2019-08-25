@@ -1,5 +1,6 @@
 import React from 'react';
 import Palette from '../Palette/Palette'
+import { connect } from 'react-redux';
 
 export const Project = ({ projectName, id, palettes }) => {
   const projectPalettes = palettes.filter(palette => palette.project_id === id);
@@ -20,6 +21,7 @@ export const Project = ({ projectName, id, palettes }) => {
   return (
     <article>
       <h3>{projectName}</h3>
+      <button>Delete</button>
       {paletteCards}
     </article>
   )
@@ -28,3 +30,5 @@ export const Project = ({ projectName, id, palettes }) => {
 export const mapStateToProps = (store) => ({
   palettes: store.palettes
 })
+
+export default connect(mapStateToProps)(Project)

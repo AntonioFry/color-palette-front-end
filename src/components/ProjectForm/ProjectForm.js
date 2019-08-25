@@ -19,7 +19,7 @@ export class ProjectForm extends Component {
 
   render() {
     return (
-      <div>
+      <form>
         <label for="projectInput">Project Name</label>
         <input
           value={this.state.projectName}
@@ -28,7 +28,7 @@ export class ProjectForm extends Component {
           onChange={(e) => this.handleChange(e)}
         />
         <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
-      </div>
+      </form>
     )
   }
 }
