@@ -14,7 +14,7 @@ export class ProjectForm extends Component {
   }
 
   handleSubmit(e) {
-
+    e.preventDefault();
   }
 
   render() {
@@ -27,7 +27,7 @@ export class ProjectForm extends Component {
           placeholder='Name Project'
           onChange={(e) => this.handleChange(e)}
         />
-        <button>Submit</button>
+        <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
       </div>
     )
   }
@@ -37,8 +37,8 @@ const mapStateToProps = (state) => ({
   
 })
 
-const mapDispatchToProps = {
+const mapDispatchToProps = (dispatch) => ({
   
-}
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm)
