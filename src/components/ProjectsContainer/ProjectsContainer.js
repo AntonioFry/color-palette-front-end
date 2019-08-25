@@ -1,5 +1,5 @@
 import React from 'react';
-import Project from '../Project';
+import Project from '../Project/Project';
 
 export const ProjectContainer = ({ projects }) => {
   const projectCards = projects.map(project => {
