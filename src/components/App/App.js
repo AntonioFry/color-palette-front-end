@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { getProjects, getPalettes } from '../../../API/apiCalls';
+import { getProjects, getPalettes } from '../../Utils/API/apiCalls';
 import './App.css';
+import ProjectForm from '../ProjectForm/ProjectForm';
 
 class App extends Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends Component {
         <header>
           <h1>Palette Picker</h1>
         </header>
+        <ProjectForm/>
       </main>
     )
   }
