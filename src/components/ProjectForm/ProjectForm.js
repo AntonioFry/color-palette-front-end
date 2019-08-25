@@ -24,7 +24,7 @@ export class ProjectForm extends Component {
         <input
           value={this.state.projectName}
           name='projectName'
-          placeholder='Name Project'
+          placeholder='Name new project'
           onChange={(e) => this.handleChange(e)}
         />
         <button onClick={(e) => this.handleSubmit(e)}>Submit</button>

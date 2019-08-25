@@ -33,7 +33,7 @@ export class PaletteForm extends Component {
         <input
           value={this.state.paletteName}
           name="paletteName"
-          placeholder="Name Palette"
+          placeholder="Name new palette"
           onChange={(e) => this.handleChange(e)}
         />
         <button onClick={(e) => this.handleSubmit}>Submit</button>
