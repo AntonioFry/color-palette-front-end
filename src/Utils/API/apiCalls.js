@@ -33,16 +33,20 @@ export const postProject = async (project) => {
   }
 }
 
-export const postPalette = async (palette) => {
+export const postPalette = async (palette, projectName) => {
+  const body = {
+    palette,
+    projectName
+  }
   const options = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(palette)
+    body: JSON.stringify(body)
   }
   try {
     const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes', options);
-    console.log(response)
-    return await response.json();
+    // const result = await response.json();
+    // return await result.json();
   } catch (error) {
     throw new Error(`failed to post palette: ${error.message}`)
   }

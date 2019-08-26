@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { getProjects, getPalettes } from '../../Utils/API/apiCalls';
+import { setProjects, setPalettes } from '../../actions';
+import { connect } from 'react-redux';
 import './App.css';
 import { connect } from 'react-redux'
 import { addProjects, addPalettes } from '../../actions';
@@ -12,6 +14,7 @@ export class App extends Component {
  async componentDidMount() {
     try {
       const projects = await getProjects();
+      // this.props.setProjects(projects);
       const palettes = await getPalettes();
       this.props.addProjects(projects)
       this.props.addPalettes(palettes)
@@ -27,9 +30,14 @@ export class App extends Component {
           <h1>Palette P<span>!</span>cker</h1>
         </header>
         <ProjectForm/>
+<<<<<<< HEAD
+        <PaletteForm/>
+        <GeneratedColors/>
+=======
         <GeneratedColors/>
         <PaletteForm/>
         <ProjectContainer/>
+>>>>>>> 8ea6e7663783141335cf1612e6137758f822d00d
       </main>
     )
   }
