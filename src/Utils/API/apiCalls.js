@@ -41,8 +41,10 @@ export const postPalette = async (palette) => {
   }
   try {
     const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes', options);
+    const result = await response.json()
     return await response.json();
   } catch (error) {
+    console.log(error.message)
     throw new Error('failed to post palette')
   }
 }
@@ -78,3 +80,5 @@ export const deletePalette = async () => {
 
   }
 }
+
+//custom endpoint needed 
