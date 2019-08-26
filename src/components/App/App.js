@@ -4,21 +4,17 @@ import { setProjects, setPalettes } from '../../actions';
 import { connect } from 'react-redux';
 import './App.css';
 import ProjectForm from '../ProjectForm/ProjectForm';
+import { connect } from 'react-redux'
+import { addProjects, addPalettes } from '../../actions';
+import GeneratedColors from '../GeneratedColors/GeneratedColors';
 
-export class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-
-    }
-  }
-  
-  componentDidMount = async () => {
+export class App extends Component { 
+ async componentDidMount() {
     try {
       const projects = await getProjects();
-      this.props.setProjects(projects);
       const palettes = await getPalettes();
-      this.props.setPalettes(palettes);
+      this.props.addProjects(projects)
+      this.props.addPalettes(palettes)
     } catch (error) {
       throw new Error(`failed to fetch: ${error.message}`)
     }
@@ -31,14 +27,16 @@ export class App extends Component {
           <h1>Palette Picker</h1>
         </header>
         <ProjectForm/>
+        <GeneratedColors/>
       </main>
     )
   }
 }
 
-export const mapDispatchToProps = (dispatch) => ({
-  setProjects: projects => dispatch(setProjects(projects)),
-  setPalettes: palettes => dispatch(setPalettes(palettes))
+const mapDispatchToProps = dispatch => ({
+  addProjects: (projects => dispatch(addProjects(projects))),
+  addPalettes: (palettes => dispatch(addPalettes(palettes)))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App)
+

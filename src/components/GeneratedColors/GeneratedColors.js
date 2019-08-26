@@ -23,3 +23,5 @@ export class GeneratedColors extends Component {
     )
   }
 }
+
+
