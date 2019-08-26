@@ -8,3 +8,5 @@ export const ColorCard = ({ hexValue }) => {
     </article>
   )
 }
+
+export default ColorCard;

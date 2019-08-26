@@ -2,7 +2,7 @@ export const palettesReducer = (state = [], action) => {
   const { type, payload } = action;
   switch (type) {
     case 'SET_PALETTES':
-      return action.projects
+      return action.palettes
 
     case 'ADD_PALETTE':
       return [...state, payload.newPalette]
