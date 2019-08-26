@@ -5,6 +5,8 @@ import ProjectForm from '../ProjectForm/ProjectForm';
 import { connect } from 'react-redux'
 import { addProjects, addPalettes } from '../../actions';
 import GeneratedColors from '../GeneratedColors/GeneratedColors';
+// import PaletteForm from
+import ProjectContainer from '../ProjectContainer/ProjectContainer'
 
 export class App extends Component {
  async componentDidMount() {
@@ -26,6 +28,8 @@ export class App extends Component {
         </header>
         <ProjectForm/>
         <GeneratedColors/>
+        <PaletteForm/>
+        <ProjectContainer/>
       </main>
     )
   }
