@@ -7,14 +7,7 @@ import { addProjects, addPalettes } from '../../actions';
 import GeneratedColors from '../GeneratedColors/GeneratedColors';
 
 export class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loading: false
-    }
-  }
-  
-  componentDidMount = async () => {
+ async componentDidMount() {
     try {
       const projects = await getProjects();
       const palettes = await getPalettes();
@@ -31,7 +24,6 @@ export class App extends Component {
         <header>
           <h1>Palette Picker</h1>
         </header>
-        {/* need to create loading comp and change based on api  */}
         <ProjectForm/>
         <GeneratedColors/>
       </main>
@@ -39,15 +31,11 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = ({ projects, palettes }) => ({
-  projects,
-  palettes
-})
 
 const mapDispatchToProps = dispatch => ({
   addProjects: (projects => dispatch(addProjects(projects))),
   addPalettes: (palettes => dispatch(addPalettes(palettes)))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(null, mapDispatchToProps)(App)
 
