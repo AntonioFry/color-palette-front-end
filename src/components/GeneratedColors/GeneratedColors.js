@@ -1,21 +1,49 @@
 import React, { Component } from 'react'
 import ColorCard from '../ColorCard/ColorCard';
+import { setCurrentColors } from '../../actions';
+import { connect } from 'react-redux';
+import randomColor from 'randomcolor';
 
-export default class GeneratedColors extends Component {
+export class GeneratedColors extends Component {
 
-createCard = () => {
-  for(var i = 0; i < this.props.palettes.length; i++){
-    this.props.palettes.map(palette => {
-    return <ColorCard palette={`palette.color_${i}`}/>;
-  });
+  generateNewPalette = (e) => {
+    e.preventDefault();
+    const currentColors = [];
+    for (let i = 0; i < 5; i++) {
+      const newColor = randomColor();
+      currentColors.push(newColor);
+    }
+    this.props.setCurrentColors(currentColors);
   }
-}
 
   render() {
+    const colorCards = this.props.currentColors.map((color, i) => {
+      return (
+      <ColorCard
+        hexValue={color}
+        key={i + 1}
+        id={i + 1}
+      /> 
+      )
+    })
     return (
-      <div>
-        {this.createCard()}
-      </div>
+      <section>
+        <div className="color-cards-container">
+          {colorCards}
+        </div>
+        <button>Generate New Palette</button>
+      </section>
     )
   }
 }
+
+export const mapStateToProps = (store) => ({
+  palettes: store.palettes,
+  currentColors: store.currentColors
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  setCurrentColors: colors => dispatch(setCurrentColors(colors))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(GeneratedColors);

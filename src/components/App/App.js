@@ -3,7 +3,6 @@ import { getProjects, getPalettes } from '../../Utils/API/apiCalls';
 import { setProjects, setPalettes } from '../../actions';
 import { connect } from 'react-redux';
 import './App.css';
-import { connect } from 'react-redux'
 import { addProjects, addPalettes } from '../../actions';
 import GeneratedColors from '../GeneratedColors/GeneratedColors';
 import PaletteForm from '../PaletteForm/PaletteForm';
@@ -30,24 +29,22 @@ export class App extends Component {
           <h1>Palette P<span>!</span>cker</h1>
         </header>
         <ProjectForm/>
-<<<<<<< HEAD
-        <PaletteForm/>
-        <GeneratedColors/>
-=======
         <GeneratedColors/>
         <PaletteForm/>
-        <ProjectContainer/>
->>>>>>> 8ea6e7663783141335cf1612e6137758f822d00d
+        {!this.props.palettes.length && <ProjectContainer/>}
       </main>
     )
   }
 }
 
+const mapStateToProps = (store) => ({
+  palettes: store.palettes
+})
 
 const mapDispatchToProps = dispatch => ({
   addProjects: (projects => dispatch(addProjects(projects))),
   addPalettes: (palettes => dispatch(addPalettes(palettes)))
 })
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
 

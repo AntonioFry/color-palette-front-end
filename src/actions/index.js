@@ -60,3 +60,8 @@ export const removePalette = id => ({
     id
   }
 });
+
+export const setCurrentColors = (colors) => ({
+  type: 'SET_CURRENT_COLORS',
+  colors
+})

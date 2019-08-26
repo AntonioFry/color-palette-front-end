@@ -27,7 +27,7 @@ removePalette = (e) => {
 }
 
 const mapStateToProps = ({ palette }) => ({
-  palette
+
 })
 
 
