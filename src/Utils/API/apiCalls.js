@@ -13,7 +13,6 @@ export const getPalettes = async () => {
   try {
     const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes');
     const result = await response.json();
-
     return result
   } catch (error) {
     throw new Error('failed to fetch palettes');
@@ -21,32 +20,31 @@ export const getPalettes = async () => {
 }
 
 export const postProject = async (project) => {
-  const option = {
+  const options = {
     method: 'POST',
-    body: {
-      ...project
-    }
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(project)
   }
   try {
-    const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/projects');
-    const result = response.json();
-    console.log(result)
+    const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/projects', options);
+    return await response.json();
   } catch (error) {
     throw new Error('failed to post project')
   }
 }
 
 export const postPalette = async (palette) => {
-  const option = {
+  const options = {
     method: 'POST',
-    body: {
-      ...palette
-    }
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(palette)
   }
   try {
-    const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes');
-    const result = response.json();
+    const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes', options);
+    const result = await response.json()
+    return await response.json();
   } catch (error) {
+    console.log(error.message)
     throw new Error('failed to post palette')
   }
 }
@@ -82,3 +80,5 @@ export const deletePalette = async () => {
 
   }
 }
+
+//custom endpoint needed 
