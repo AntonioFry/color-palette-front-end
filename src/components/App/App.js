@@ -3,12 +3,12 @@ import { getProjects, getPalettes } from '../../Utils/API/apiCalls';
 import { setProjects, setPalettes } from '../../actions';
 import { connect } from 'react-redux';
 import './App.css';
-import ProjectForm from '../ProjectForm/ProjectForm';
 import { connect } from 'react-redux'
 import { addProjects, addPalettes } from '../../actions';
 import GeneratedColors from '../GeneratedColors/GeneratedColors';
-// import PaletteForm from
-import ProjectContainer from '../ProjectContainer/ProjectContainer'
+import PaletteForm from '../PaletteForm/PaletteForm';
+import ProjectContainer from '../ProjectContainer/ProjectContainer';
+import ProjectForm from '../ProjectForm/ProjectForm';
 
 export class App extends Component {
  async componentDidMount() {
