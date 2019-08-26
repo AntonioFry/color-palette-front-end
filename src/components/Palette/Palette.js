@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { deletePalette } from '../../actions';
 
 export class Palette extends Component {
 
@@ -9,20 +10,14 @@ removePalette = (e) => {
 }
 
   render() {
-
-    const cardColor = {
-      backgroundColor: `#this.props.color`,
-    }
-
-
     return (
       <div>
         <h2>{this.props.palette.palette_name}</h2>
-        <div style={cardColor}></div>
-        <div style={cardColor}></div>
-        <div style={cardColor}></div>
-        <div style={cardColor}></div>
-        <div style={cardColor}></div>
+        <div style={{backgroundColor: this.props.color_1}}></div>
+        <div style={{backgroundColor: this.props.color_2}}></div>
+        <div style={{backgroundColor: this.props.color_3}}></div>
+        <div style={{backgroundColor: this.props.color_4}}></div>
+        <div style={{backgroundColor: this.props.color_5}}></div>
         <button onClick={this.removePalette}>🗑</button>
       </div>
     )
