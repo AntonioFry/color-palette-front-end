@@ -29,7 +29,7 @@ export const postProject = async (project) => {
     const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/projects', options);
     return await response.json();
   } catch (error) {
-    throw new Error('failed to post project')
+    throw new Error(`failed to post project: ${error.message}`)
   }
 }
 
@@ -41,11 +41,10 @@ export const postPalette = async (palette) => {
   }
   try {
     const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes', options);
-    const result = await response.json()
+    console.log(response)
     return await response.json();
   } catch (error) {
-    console.log(error.message)
-    throw new Error('failed to post palette')
+    throw new Error(`failed to post palette: ${error.message}`)
   }
 }
 

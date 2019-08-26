@@ -22,7 +22,7 @@ export class App extends Component {
     return (
       <main>
         <header>
-          <h1>Palette Picker</h1>
+          <h1>Palette P<span>!</span>cker</h1>
         </header>
         <ProjectForm/>
         <GeneratedColors/>

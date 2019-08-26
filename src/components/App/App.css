@@ -1,6 +1,21 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+main {
+  display: block;
+  justify-content: center;
+  margin: 2%;
+}
+
 h1 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 4em;
+  color: maroon;
+  text-align: center;
+}
+
+span {
+  color:rgb(61, 134, 199);
 }
 
 
