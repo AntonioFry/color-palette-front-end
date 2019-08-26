@@ -4,10 +4,11 @@ import { setProjects, setPalettes } from '../../actions';
 import { connect } from 'react-redux';
 import './App.css';
 import ProjectForm from '../ProjectForm/ProjectForm';
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { addProjects, addPalettes } from '../../actions';
 import GeneratedColors from '../GeneratedColors/GeneratedColors';
-import PaletteForm from '../PaletteForm/PaletteForm';
+// import PaletteForm from
+import ProjectContainer from '../ProjectContainer/ProjectContainer'
 
 export class App extends Component {
  async componentDidMount() {
@@ -26,11 +27,17 @@ export class App extends Component {
     return (
       <main>
         <header>
-          <h1>Palette Picker</h1>
+          <h1>Palette P<span>!</span>cker</h1>
         </header>
         <ProjectForm/>
+<<<<<<< HEAD
         <PaletteForm/>
         <GeneratedColors/>
+=======
+        <GeneratedColors/>
+        <PaletteForm/>
+        <ProjectContainer/>
+>>>>>>> 8ea6e7663783141335cf1612e6137758f822d00d
       </main>
     )
   }

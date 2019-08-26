@@ -34,17 +34,11 @@ handleChange = (e) => {
 }
   render() {
     return (
-      <form onSubmit={this.saveProject}>
-        <label for="project">Create a Project</label>
-        <input
-        type="text" placeholder="name your project"
-        id="project"
-        onChange={(e) => this.handleChange(e)}
-        value={(e) => this.state.projectName(e)}
-        name="projectName"
-        />
-        <input type="submit" value="create and save project"/>
-      </form>
+        <form onSubmit={this.saveProject}>
+          <label for="project">Create a Project</label>
+          <input type="text" placeholder="name your project" id="project" onChange={this.handleChange} value={this.state.projectName} name="projectName" />
+          <input type="submit" value="create and save project"/>
+        </form>
     )
   }
 }
