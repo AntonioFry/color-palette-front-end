@@ -1,9 +1,9 @@
 export const projectsReducer = (state = [], action) => {
   const { type, payload } = action;
   switch (type) {
-    case 'SET_PROJECTS':
-      return action.projects
-    
+    case 'ADD_PROJECTS':
+    return [...state, ...payload.projects]
+
     case 'ADD_PROJECT':
       return [...state, payload.newProject]
     
