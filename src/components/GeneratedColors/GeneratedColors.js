@@ -1,26 +1,20 @@
-import React, { Component } from 'react';
-import './GeneratedColors.css';
+import React, { Component } from 'react'
 
-export class GeneratedColors extends Component {
-  constructor() {
-    super();
-    this.state = {
-      
-    }
-  }
+export default class GeneratedColors extends Component {
 
-  generateColors = () => {
-    // generates colors and saves them to redux
-  }
+// createCard = () => {
+//   for(var i = 0; i < this.props.palettes.length; i++){
+//     this.props.palettes.map(palette => {
+//     return <ColorCard color={`palette.color_${i}`}/>;
+//   });
+//   }
+// }
 
   render() {
     return (
-      <section>
-        <section>
-
-        </section>
-        <button>Generate Colors</button>
-      </section>
+      <div>
+        {/* {this.createCard()} */}
+      </div>
     )
   }
 }

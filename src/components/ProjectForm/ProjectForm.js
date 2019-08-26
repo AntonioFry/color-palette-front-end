@@ -1,45 +1,60 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './ProjectForm.css';
+import {addProjects, addPalettes} from '../../actions';
+import { postProject, getProjects } from '../../Utils/API/apiCalls';
 
 export class ProjectForm extends Component {
-  constructor() {
-    super();
-    this.state = {
+constructor() {
+  super()
+  this.state = {
+    projectId: 0,
+    projectName: '',
+    paletteName: ''
+  }
+}
+
+saveProject = async (e) => {
+  e.preventDefault()
+  try {
+    const project = {name: this.state.projectName}
+    await postProject(project)
+    const projects = await getProjects()
+    this.props.addProjects(projects)
+    this.setState({
       projectName: ''
-    }
+    })
+  } catch(error) {
+    throw new Error(`failed to post: ${error.message}`)
   }
+}
 
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-  }
-
+handleChange = (e) => {
+  const {name, value} = e.target
+  this.setState({ [name]: value})
+}
   render() {
     return (
-      <form>
-        <label for="projectInput">Project Name</label>
+      <form onSubmit={this.saveProject}>
+        <label for="project">Create a Project</label>
         <input
-          value={this.state.projectName}
-          name='projectName'
-          placeholder='Name new project'
-          onChange={(e) => this.handleChange(e)}
+        type="text" placeholder="name your project"
+        id="project"
+        onChange={(e) => this.handleChange(e)}
+        value={(e) => this.state.projectName(e)}
+        name="projectName"
         />
-        <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
+        <input type="submit" value="create and save project"/>
       </form>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  
+const mapStateToProps = ({ projects }) => ({
+  projects
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  
+const mapDispatchToProps = dispatch => ({
+  addProjects: (projects => dispatch(addProjects(projects)))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm)
