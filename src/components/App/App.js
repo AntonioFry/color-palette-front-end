@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { getProjects, getPalettes } from '../../Utils/API/apiCalls';
 import './App.css';
 import ProjectForm from '../ProjectForm/ProjectForm';
+import { connect } from 'react-redux'
+import { addProject, addPalette } from '../../actions';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -15,6 +17,7 @@ class App extends Component {
     try {
       const projects = await getProjects();
       const palettes = await getPalettes();
+
     } catch (error) {
       throw new Error(`failed to fetch: ${error.message}`)
     }
@@ -32,4 +35,15 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = () => ({
+  projects,
+  palettes
+})
+
+const mapDispatchToProps = dispatch => {
+  addProject(project => dispatch(addProject(project))),
+  addPalette(palette => dispatch(addPalette(palette)))
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
