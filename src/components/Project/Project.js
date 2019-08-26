@@ -1,6 +1,7 @@
 import React from 'react';
 import Palette from '../Palette/Palette'
 import { connect } from 'react-redux';
+import './Project.css'
 
 export const Project = ({ projectName, id, palettes }) => {
   const projectPalettes = palettes.filter(palette => palette.project_id === id);

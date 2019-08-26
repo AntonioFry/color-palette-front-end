@@ -1,5 +1,6 @@
 import React, { Component } from 'react-redux';
 import { addPalette } from '../../actions';
+import './PaletteForm.css';
 
 export class PaletteForm extends Component {
   constructor() {

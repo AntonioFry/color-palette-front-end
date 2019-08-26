@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './GeneratedColors.css';
 
 export class GeneratedColors extends Component {
   constructor() {
