@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ColorCard from '../ColorCard/ColorCard';
 
 export default class GeneratedColors extends Component {
 
