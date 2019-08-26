@@ -50,15 +50,29 @@ export class PaletteForm extends Component {
       return <option>{project.name}</option>
     });
     return (
-      <form onSubmit={this.savePalette}>
-        <label for="project-selector">Or Select a Project</label>
-        <select id="project-selector" onChange={this.handleChange} value={this.state.projectName} name="projectName">
-          <option value={0} selected>--Select Your Project--</option>
-          {projectNames}
-        </select>
-        <input type="text" placeholder="name your palette" id="palette" onChange={(e) => this.handleChange(e)} name="paletteName" value={this.state.paletteName} />
-        <input type="submit" value="save palette" />
-      </form>
+      <section className="palette-form-container">
+        <form onSubmit={this.savePalette} className="palette-form">
+          <label for="project-selector" className="palette-form-label">Select a Project</label>
+          <select className="project-selector" onChange={this.handleChange} value={this.state.projectName} name="projectName">
+            <option value={0} selected>--Select Your Project--</option>
+            {projectNames}
+          </select>
+          <input
+          type="text"
+          placeholder="name your palette"
+          id="palette"
+          onChange={(e) => this.handleChange(e)}
+          name="paletteName"
+          value={this.state.paletteName}
+          className="palette-form-input"
+          />
+          <input
+          type="submit"
+          value="save palette"
+          className="submit-palette-input"
+          />
+        </form>
+      </section>
     )
   }
 }
