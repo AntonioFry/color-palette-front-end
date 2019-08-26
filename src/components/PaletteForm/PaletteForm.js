@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import { addPalettes } from '../../actions';
-=======
-import { addPalette } from '../../actions';
->>>>>>> 8ea6e7663783141335cf1612e6137758f822d00d
 import './PaletteForm.css';
 import { postPalette, getPalettes } from '../../Utils/API/apiCalls';
 import randomColor from 'randomcolor';
@@ -13,10 +9,6 @@ export class PaletteForm extends Component {
   constructor() {
     super();
     this.state = {
-<<<<<<< HEAD
-=======
-      projectId: 0,
->>>>>>> 8ea6e7663783141335cf1612e6137758f822d00d
       paletteName: '',
       projectName: '',
     }
@@ -26,10 +18,6 @@ export class PaletteForm extends Component {
     e.preventDefault()
     try {
       const palette = {
-<<<<<<< HEAD
-=======
-        // project_id: parseInt(this.state.projectId),
->>>>>>> 8ea6e7663783141335cf1612e6137758f822d00d
         palette_name: this.state.paletteName,
         color_1: randomColor(),
         color_2: randomColor(),

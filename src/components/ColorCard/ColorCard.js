@@ -14,9 +14,9 @@ const cardColor = {
   backgroundColor: this.props.palette,
 }
 
-changeLock = () => {
+const changeLock = () => {
   // let icon;
-   this.state.locked != this.state.locked
+   this.setState({ locked: !this.state.locked })
   //  if(this.state.locked){
   //    icon = <i class="fas fa-lock"></i>
   //  } else {
