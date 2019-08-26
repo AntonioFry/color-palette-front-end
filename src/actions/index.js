@@ -47,15 +47,15 @@ export const addPalettes = palettes => ({
   }
 });
 
-export const deleteProject = id => ({
-  type: 'DELETE_PALETTES',
+export const removeProject = id => ({
+  type: 'REMOVE_PROJECT',
   payload: {
     id
   }
 });
 
-export const deletePalette = id => ({
-  type: 'DELETE_PALETTES',
+export const removePalette = id => ({
+  type: 'REMOVE_PALETTE',
   payload: {
     id
   }

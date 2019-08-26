@@ -15,20 +15,20 @@ const cardColor = {
 }
 
 changeLock = () => {
-  const icon;
+  // let icon;
    this.state.locked != this.state.locked
-   if(this.state.locked){
-     icon = <i class="fas fa-lock"></i>
-   } else {
-    icon = <i class="fas fa-lock-open"></i>
-   }
-   return icon;
+  //  if(this.state.locked){
+  //    icon = <i class="fas fa-lock"></i>
+  //  } else {
+  //   icon = <i class="fas fa-lock-open"></i>
+  //  }
+  //  return icon;
 }
 
     return (
       <div style={cardColor}>
         <p>{this.props.color}</p>
-        <button onClick={this.changeLock}>{icon}</button>
+        <button onClick={this.changeLock}></button>
       </div>
     )
   }

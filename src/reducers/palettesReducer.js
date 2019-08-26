@@ -5,7 +5,7 @@ export const palettesReducer = (state = [], action) => {
     return payload.palettes
     case 'ADD_PALETTE':
     return [...state, payload.newPalette]
-    case "DELETE_PALETTE":
+    case "REMOVE_PALETTE":
     return state.filter(palette => palette.id !== payload.id)
     default:
       return state;
