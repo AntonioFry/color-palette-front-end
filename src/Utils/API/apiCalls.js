@@ -1,6 +1,6 @@
 export const getProjects = async () => {
   try {
-    const response = await fetch('http://localhost:3001/api/v1/projects');
+    const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/projects');
     const result =  await response.json();
 
     return result
@@ -11,7 +11,7 @@ export const getProjects = async () => {
 
 export const getPalettes = async () => {
   try {
-    const response = await fetch('http://localhost:3001/api/v1/palettes');
+    const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes');
     const result = await response.json();
     return result
   } catch (error) {
@@ -26,7 +26,7 @@ export const postProject = async (project) => {
     body: JSON.stringify(project)
   }
   try {
-    const response = await fetch('http://localhost:3001/api/v1/projects', options);
+    const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/projects', options);
     return await response.json();
   } catch (error) {
     throw new Error('failed to post project')
@@ -38,14 +38,13 @@ export const postPalette = async (palette, projectName) => {
     palette,
     projectName
   }
-  console.log(body);
   const options = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(body)
   }
   try {
-    const response = await fetch('http://localhost:3001/api/v1/palettes', options);
+    const response = await fetch('https://palette-picker-database.herokuapp.com/api/v1/palettes', options);
     // const result = await response.json();
     // return await result.json();
   } catch (error) {

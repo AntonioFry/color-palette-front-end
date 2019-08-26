@@ -14,6 +14,7 @@
   align-items: center
 }
 
+.palette-form-input,
 .project-selector {
   width: 100%;
 }
