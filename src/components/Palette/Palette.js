@@ -23,7 +23,15 @@ removePalette = (e) => {
           <div className="project-color" style={{backgroundColor: this.props.color_2}}></div>
           <div className="project-color" style={{backgroundColor: this.props.color_3}}></div>
           <div className="project-color" style={{backgroundColor: this.props.color_4}}></div>
-          <div className="project-color" style={{backgroundColor: this.props.color_5}}></div>
+          <div className="container project-color">
+          <div className="paint" style={{backgroundColor: this.props.color_5}}>
+          </div>
+            <div className="roller">
+            <div className="roll" style={{backgroundColor: this.props.color_5}}></div>
+            <div className="handle"></div>
+            <div className="grip"></div>
+         </div>
+        </div>
         </div>
       </article>
     )

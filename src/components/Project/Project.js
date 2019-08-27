@@ -6,6 +6,8 @@ export default function Project(props) {
   const paletteCards = props.palettes.map(palette => {
     return <Palette {...palette} />
   })
+
+  // only render if there are any palettes
   return (
     <article className="project">
       <div className="project-name-container">
