@@ -28,11 +28,11 @@ export class GeneratedColors extends Component {
       )
     })
     return (
-      <section>
+      <section className="generated-colors-section">
         <div className="color-cards-container">
           {colorCards}
         </div>
-        <button onClick={(e) => this.generateNewPalette(e)}>Generate New Palette</button>
+        <button className="generate-colors-button" onClick={(e) => this.generateNewPalette(e)}>Generate New Palette</button>
       </section>
     )
   }
