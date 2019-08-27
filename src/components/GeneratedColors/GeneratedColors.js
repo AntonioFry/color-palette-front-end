@@ -3,6 +3,7 @@ import ColorCard from '../ColorCard/ColorCard';
 import { setCurrentColors } from '../../actions';
 import { connect } from 'react-redux';
 import randomColor from 'randomcolor';
+import './GeneratedColors.css';
 
 export class GeneratedColors extends Component {
 
@@ -27,11 +28,11 @@ export class GeneratedColors extends Component {
       )
     })
     return (
-      <section>
+      <section className="generated-colors-section">
         <div className="color-cards-container">
           {colorCards}
         </div>
-        <button>Generate New Palette</button>
+        <button className="generate-colors-button" onClick={(e) => this.generateNewPalette(e)}>Generate New Palette</button>
       </section>
     )
   }

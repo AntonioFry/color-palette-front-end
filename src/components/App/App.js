@@ -31,7 +31,8 @@ export class App extends Component {
         <ProjectForm/>
         <GeneratedColors/>
         <PaletteForm/>
-        {!this.props.palettes.length && <ProjectContainer/>}
+        {!this.props.palettes.length && 
+        <ProjectContainer/>}
       </main>
     )
   }
