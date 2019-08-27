@@ -38,8 +38,17 @@ handleChange = (e) => {
       <section className="project-form-section">
         <form className="project-form" onSubmit={this.saveProject}>
           <label className="project-form-label" for="project">Create a Project</label>
-          <input className="project-form-input" type="text" placeholder="name your project" id="project" onChange={this.handleChange} value={this.state.projectName} name="projectName" />
-          <input className="project-form-button" type="submit" value="create and save project"/>
+          <input
+          className="project-form-input"
+          type="text"
+          placeholder="name your project"
+          id="project" onChange={this.handleChange}
+          value={this.state.projectName}
+          name="projectName" />
+          <input
+          className="project-form-button"
+          type="submit"
+          value="create and save project"/>
         </form>
       </section>
     )
