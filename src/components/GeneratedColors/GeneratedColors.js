@@ -31,7 +31,7 @@ export class GeneratedColors extends Component {
         <div className="color-cards-container">
           {colorCards}
         </div>
-        <button>Generate New Palette</button>
+        <button onClick={(e) => this.generateNewPalette(e)}>Generate New Palette</button>
       </section>
     )
   }
