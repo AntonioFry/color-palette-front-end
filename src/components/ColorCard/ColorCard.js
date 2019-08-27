@@ -19,14 +19,14 @@ export class ColorCard extends Component {
       icon = <i class="fas fa-lock-open"></i>
     }
     return icon;
-}
+  }
 
   render() {
     const cardColor = {
       backgroundColor: this.props.hexValue,
     }
-    
-    const icon = this.state.locked ? 
+
+    const icon = !this.state.locked ? 
     <i class="fas fa-lock-open" onClick={(e) => this.changeLock(e)}></i> : 
     <i class="fas fa-lock" onClick={(e) => this.changeLock(e)}></i>;
 

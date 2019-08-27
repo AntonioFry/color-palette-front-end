@@ -15,15 +15,16 @@ export class PaletteForm extends Component {
   }
 
   savePalette = async (e) => {
+    const { currentColors } = this.props;
     e.preventDefault()
     try {
       const palette = {
         palette_name: this.state.paletteName,
-        color_1: randomColor(),
-        color_2: randomColor(),
-        color_3: randomColor(),
-        color_4: randomColor(),
-        color_5: randomColor()
+        color_1: currentColors[0],
+        color_2: currentColors[1],
+        color_3: currentColors[2],
+        color_4: currentColors[3],
+        color_5: currentColors[4]
       }
       await postPalette(palette, this.state.projectName)
       const palettes = await getPalettes()
@@ -77,7 +78,8 @@ export class PaletteForm extends Component {
 }
 
 export const mapStateToProps = (store) => ({
-  projects: store.projects
+  projects: store.projects,
+  currentColors: store.currentColors
 })
 
 export const mapDispatchToProps = (dispatch) => ({
