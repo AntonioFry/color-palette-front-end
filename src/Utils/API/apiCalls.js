@@ -40,7 +40,7 @@ export const postPalette = async (palette, projectName) => {
   }
   const options = {
     method: 'POST',
-    headers: {'Content-Type': 'application/json'},
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   }
   try {
@@ -68,19 +68,35 @@ export const patchPalette = async () => {
   }
 }
 
-export const deleteProject = async () => {
+export const deleteProject = async (id) => {
+  const body = {
+    id
+  }
+  const options = {
+    method: "DELETE",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  }
   try {
-
+    const response = await fetch(`https://palette-picker-database.herokuapp.com/api/v1/projects/${id}`, options);
   } catch (error) {
-
+    throw new Error(`failed to delete project: ${error.message}`)
   }
 }
 
-export const deletePalette = async () => {
+export const deletePalette = async (id, removePalette) => {
+  const body = {
+    id
+  }
+  const options = {
+    method: "DELETE",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  }
   try {
-
+    const response = await fetch(`https://palette-picker-database.herokuapp.com/api/v1/palettes/${id}`, options);
   } catch (error) {
-
+    throw new Error(`failed to delete palette: ${error.message}`)
   }
 }
 

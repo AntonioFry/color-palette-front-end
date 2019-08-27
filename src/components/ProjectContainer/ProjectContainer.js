@@ -15,8 +15,7 @@ export class ProjectContainer extends Component {
          <article className='projects-container'>
           {projectCards}
         </article>
-      </section>
-      
+      </section> 
     )
   }
 }
