@@ -95,7 +95,6 @@ export const deletePalette = async (id, removePalette) => {
   }
   try {
     const response = await fetch(`https://palette-picker-database.herokuapp.com/api/v1/palettes/${id}`, options);
-    removePalette(id);
   } catch (error) {
     throw new Error(`failed to delete palette: ${error.message}`)
   }

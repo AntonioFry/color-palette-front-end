@@ -6,11 +6,11 @@ import './Palette.css';
 
 export class Palette extends Component {
 
-removePalette = (e) => {
+ removePalette = (e) => {
   const { id } = this.props;
   e.preventDefault();
-  deletePalette(id);
   this.props.removePalette(id);
+  deletePalette(id);
 }
 
   render() {
@@ -38,8 +38,8 @@ removePalette = (e) => {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  removePalette: (palette => dispatch(removePalette(palette)))
+const mapDispatchToProps = (dispatch) => ({
+  removePalette: palette => dispatch(removePalette(palette))
 })
 
-export default connect(mapDispatchToProps)(Palette)
+export default connect(null, mapDispatchToProps)(Palette)
