@@ -38,13 +38,8 @@ removePalette = (e) => {
   }
 }
 
-const mapStateToProps = ({ palette }) => ({
-
-})
-
-
 const mapDispatchToProps = dispatch => ({
   removePalette: (palette => dispatch(removePalette(palette)))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Palette)
+export default connect(mapDispatchToProps)(Palette)
