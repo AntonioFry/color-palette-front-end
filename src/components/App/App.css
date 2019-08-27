@@ -18,4 +18,16 @@ span {
   color:rgb(61, 134, 199);
 }
 
+.forms {
+  display: inline-flex;
+  width: 100%;
+}
+
+.orStyle {
+  color: maroon;
+  font-size: 4em;
+  font-family: "Lato";
+  margin: 5%;
+}
+
 

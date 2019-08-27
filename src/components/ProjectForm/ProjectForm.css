@@ -3,18 +3,44 @@
   justify-content: center;
   margin: 0px;
   width: 100%;
-  height: 100px;
+  height: 200px;
+}
+
+.project-form-label {
+  font-size: 2em;
+  font-family: lato;
+  color: maroon;
 }
 
 .project-form {
-  width: 20%;
+  width: 40%;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.project-form-input,
-.project-form-button {
+.project-form-button,
+.project-form-input {
   width: 100%;
+  height: 50px;
+  text-align: center;
+  outline-color: maroon;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.project-form-button:hover {
+  background-color: white;
+  color: maroon;
+}
+
+.project-form-button:focus {
+  border: 1px solid maroon;
+}
+
+.savePaletteMessage {
+  display: flex;
+  font-size: 1.2em;
+  color: maroon;
 }

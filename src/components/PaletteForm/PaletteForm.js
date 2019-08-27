@@ -67,7 +67,7 @@ export class PaletteForm extends Component {
           />
           <input
           type="submit"
-          value="save palette"
+          value="Save Palette"
           className="submit-palette-input"
           />
         </form>

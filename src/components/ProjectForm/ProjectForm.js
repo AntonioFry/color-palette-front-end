@@ -48,7 +48,8 @@ handleChange = (e) => {
           <input
           className="project-form-button"
           type="submit"
-          value="create and save project"/>
+          value="Save Project" />
+          {/* <p className="savePaletteMessage">Next: <br/> Select your project and save your palettes</p> should appear after button click */}
         </form>
       </section>
     )
