@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {addProjects, addPalettes} from '../../actions';
 import { postProject, getProjects } from '../../Utils/API/apiCalls';
+import './ProjectForm.css';
 
 export class ProjectForm extends Component {
 constructor() {
@@ -34,11 +35,22 @@ handleChange = (e) => {
 }
   render() {
     return (
-        <form onSubmit={this.saveProject}>
-          <label for="project">Create a Project</label>
-          <input type="text" placeholder="name your project" id="project" onChange={this.handleChange} value={this.state.projectName} name="projectName" />
-          <input type="submit" value="create and save project"/>
+      <section className="project-form-section">
+        <form className="project-form" onSubmit={this.saveProject}>
+          <label className="project-form-label" for="project">Create a Project</label>
+          <input
+          className="project-form-input"
+          type="text"
+          placeholder="name your project"
+          id="project" onChange={this.handleChange}
+          value={this.state.projectName}
+          name="projectName" />
+          <input
+          className="project-form-button"
+          type="submit"
+          value="create and save project"/>
         </form>
+      </section>
     )
   }
 }
