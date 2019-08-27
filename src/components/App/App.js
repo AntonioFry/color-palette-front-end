@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { getProjects, getPalettes } from '../../Utils/API/apiCalls';
-import { setProjects, setPalettes } from '../../actions';
 import { connect } from 'react-redux';
 import './App.css';
 import { addProjects, addPalettes } from '../../actions';
@@ -13,7 +12,6 @@ export class App extends Component {
  async componentDidMount() {
     try {
       const projects = await getProjects();
-      // this.props.setProjects(projects);
       const palettes = await getPalettes();
       this.props.addProjects(projects)
       this.props.addPalettes(palettes)
@@ -33,6 +31,8 @@ export class App extends Component {
         <ProjectForm/>
         {!this.props.palettes.length && 
         <ProjectContainer/>}
+        {this.props.palettes.length &&
+        <ProjectContainer />}
       </main>
     )
   }

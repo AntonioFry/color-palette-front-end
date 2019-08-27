@@ -1,6 +1,7 @@
 import React from 'react';
 import Project from '../Project/Project';
 import './ProjectsContainer.css';
+import { connect } from 'react-redux';
 
 export const ProjectContainer = ({ projects }) => {
   const projectCards = projects.map(project => {
@@ -22,3 +23,5 @@ export const ProjectContainer = ({ projects }) => {
 export const mapStateToProps = (store) => ({
   projects: store.projects,
 })
+
+export default connect(mapStateToProps)(ProjectContainer);
