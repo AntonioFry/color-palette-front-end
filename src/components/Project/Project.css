@@ -3,6 +3,30 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  min-height: 200px;
   padding: 10px;
+  box-shadow: 5px 5px 5px grey;
+  min-width: 200px;
+}
+
+.project-name-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  padding-bottom: 5%;
+  border-bottom: maroon solid 2px;
+}
+
+.rmvBtn {
+  padding: 2%;
+  width: 30px;
+  background-color: ghostwhite;
+  color: maroon;
+  border-radius: 50%;
+}
+
+.rmvBtn:focus {
+  background-color: rgb(61, 134, 199);
+  outline-color: white;
+  color: white;
 }

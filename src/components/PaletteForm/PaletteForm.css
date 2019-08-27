@@ -3,19 +3,39 @@
   justify-content: center;
   margin: 0px;
   width: 100%;
-  height: 100px;
+  height: 200px;
+}
+
+.palette-form-label {
+  font-size: 2em;
+  font-family: lato;
+  color: maroon;
 }
 
 .palette-form {
-  width: 20%;
+  width: 40%;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
 .submit-palette-input,
 .palette-form-input,
 .project-selector {
   width: 100%;
+  height: 50px;
+  text-align: center;
+  outline-color: maroon;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.submit-palette-input:hover {
+  background-color: white;
+  color: maroon;
+}
+
+.submit-palette-input:focus {
+  border: 1px solid maroon;
 }

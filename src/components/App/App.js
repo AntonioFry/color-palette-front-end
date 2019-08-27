@@ -27,8 +27,11 @@ export class App extends Component {
           <h1>Palette P<span>!</span>cker</h1>
         </header>
         <GeneratedColors/>
-        <PaletteForm/>
-        <ProjectForm/>
+        <section className="forms">
+          <ProjectForm/>
+          <h3 className="orStyle">OR</h3>
+          <PaletteForm/>
+        </section>
         {!this.props.palettes.length && 
         <ProjectContainer/>}
         {this.props.palettes.length &&
