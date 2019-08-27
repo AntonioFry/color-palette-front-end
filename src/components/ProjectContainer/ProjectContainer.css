@@ -1,3 +1,11 @@
+.project-header {
+  margin: 2%;
+  font-family: "Satisfy";
+  font-size: 3em;
+  color: maroon;
+  border-bottom: 2px solid rgb(61, 134, 199);
+}
+
 .projects-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

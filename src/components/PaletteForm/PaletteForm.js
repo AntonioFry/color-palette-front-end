@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { addPalettes } from '../../actions';
 import './PaletteForm.css';
 import { postPalette, getPalettes } from '../../Utils/API/apiCalls';
-import randomColor from 'randomcolor';
 import { connect } from 'react-redux';
 
 export class PaletteForm extends Component {

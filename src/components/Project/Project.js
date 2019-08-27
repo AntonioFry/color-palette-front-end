@@ -8,7 +8,10 @@ export default function Project(props) {
   })
   return (
     <article className="project">
-      <h2 className="project-name">{props.name}</h2>
+      <div className="project-name-container">
+          <h2 className="project-name">{props.name}</h2>
+          <button className="rmvBtn">X</button>
+      </div>
       {paletteCards}
     </article>
   )
