@@ -28,9 +28,9 @@ export class App extends Component {
         <header>
           <h1>Palette P<span>!</span>cker</h1>
         </header>
-        <ProjectForm/>
         <GeneratedColors/>
         <PaletteForm/>
+        <ProjectForm/>
         {!this.props.palettes.length && 
         <ProjectContainer/>}
       </main>
