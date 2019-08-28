@@ -11,7 +11,8 @@ constructor() {
     projectId: 0,
     projectName: '',
     paletteName: '',
-    successMessage: ''
+    successMessage: '',
+    option: 'OR'
   }
 }
 
@@ -49,13 +50,18 @@ saveProject = async (e) => {
       throw new Error(`failed to post: ${error.message}`)
     }
   }
+
+  this.setState({
+    option: 'AND'
+  })
 }
 
 handleChange = (e) => {
   const {name, value} = e.target
   this.setState({ [name]: value})
   this.setState({
-    successMessage: ''
+    successMessage: '',
+    option: 'OR'
   })
 }
   render() {
@@ -76,6 +82,7 @@ handleChange = (e) => {
           value="Save Project" />
           <p className="message">{this.state.successMessage}</p>
         </form>
+        <h3 className="orStyle">{this.state.option}</h3>
       </section>
     )
   }

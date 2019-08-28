@@ -19,15 +19,10 @@ span {
 }
 
 .forms {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 60% 40%;
   width: 100%;
 }
 
-.orStyle {
-  color: maroon;
-  font-size: 4em;
-  font-family: "Lato";
-  margin: 5%;
-}
 
 

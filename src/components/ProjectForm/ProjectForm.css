@@ -50,3 +50,11 @@
   font-size: 1.5em;
   font-family: "Satisfy"
 }
+
+.orStyle {
+  color: maroon;
+  font-size: 4em;
+  font-family: "Lato";
+  margin-left: 25%;
+  margin-top: 15%;
+}
