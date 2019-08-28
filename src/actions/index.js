@@ -64,4 +64,9 @@ export const removePalette = id => ({
 export const setCurrentColors = (colors) => ({
   type: 'SET_CURRENT_COLORS',
   colors
-})
+});
+
+export const lockingColor = (id) => ({
+  type: "LOCKING_COLOR",
+  id
+});

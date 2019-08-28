@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App component should match the snapshot 1`] = `
+<main>
+  <header>
+    <h1>
+      Palette P
+      <span>
+        !
+      </span>
+      cker
+    </h1>
+  </header>
+  <Connect(GeneratedColors) />
+  <section
+    className="forms"
+  >
+    <Connect(ProjectForm) />
+    <h3
+      className="orStyle"
+    >
+      OR
+    </h3>
+    <Connect(PaletteForm) />
+  </section>
+  <Connect(ProjectContainer) />
+</main>
+`;

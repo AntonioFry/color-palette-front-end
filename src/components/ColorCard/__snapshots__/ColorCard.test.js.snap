@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorCard ColorCard component should match the snapshot 1`] = `
+<div
+  className="color-card"
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+    }
+  }
+>
+  <p
+    className="card-hex-value"
+  >
+    #FFFFFF
+  </p>
+  <i
+    class="fas fa-lock-open"
+    onClick={[Function]}
+  />
+</div>
+`;

@@ -19,11 +19,11 @@ export class PaletteForm extends Component {
     try {
       const palette = {
         palette_name: this.state.paletteName,
-        color_1: currentColors[0],
-        color_2: currentColors[1],
-        color_3: currentColors[2],
-        color_4: currentColors[3],
-        color_5: currentColors[4]
+        color_1: currentColors[0].newColor,
+        color_2: currentColors[1].newColor,
+        color_3: currentColors[2].newColor,
+        color_4: currentColors[3].newColor,
+        color_5: currentColors[4].newColor
       }
       await postPalette(palette, this.state.projectName)
       const palettes = await getPalettes()

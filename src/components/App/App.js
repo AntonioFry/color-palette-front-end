@@ -41,14 +41,14 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = (store) => ({
+export const mapStateToProps = (store) => ({
   palettes: store.palettes
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addProjects: (projects => dispatch(addProjects(projects))),
   addPalettes: (palettes => dispatch(addPalettes(palettes)))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 

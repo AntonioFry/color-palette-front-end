@@ -6,14 +6,27 @@ import randomColor from 'randomcolor';
 import './GeneratedColors.css';
 
 export class GeneratedColors extends Component {
+  
+  componentDidMount() {
+    const startingColors = [
+      { id: 1, locked: false, newColor: randomColor() },
+      { id: 2, locked: false, newColor: randomColor() },
+      { id: 3, locked: false, newColor: randomColor() },
+      { id: 4, locked: false, newColor: randomColor() },
+      { id: 5, locked: false, newColor: randomColor() }
+    ]
+    this.props.setCurrentColors(startingColors);
+  }
 
-  generateNewPalette = (e) => {
-    e.preventDefault();
-    const currentColors = [];
-    for (let i = 0; i < 5; i++) {
-      const newColor = randomColor();
-      currentColors.push(newColor);
-    }
+  generateNewPalette = () => {
+    const currentColors = this.props.currentColors.map(color => {
+      if (color.locked === true) {
+        return color
+      } else {
+        color.newColor = randomColor();
+        return color
+      }
+    })
     this.props.setCurrentColors(currentColors);
   }
 
@@ -21,9 +34,10 @@ export class GeneratedColors extends Component {
     const colorCards = this.props.currentColors.map((color, i) => {
       return (
       <ColorCard
-        hexValue={color}
-        key={i + 1}
-        id={i + 1}
+        hexValue={color.newColor}
+        key={color.id}
+        id={color.id}
+        locked={color.locked}
       /> 
       )
     })
