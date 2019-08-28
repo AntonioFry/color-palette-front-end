@@ -49,7 +49,7 @@ describe('App', () => {
           { id: 2, palette_name: 'Cat Colors' },
           { id: 3, palette_name: 'Something' }
         ] 
-    }
+      }
 
       const mappedProps = mapStateToProps(mockStore);
       expect(mappedProps).toEqual(expected);
@@ -63,8 +63,11 @@ describe('App', () => {
         { id: 2, name: 'Cat Party' },
         { id: 3, name: 'Something' }
       ];
-
-
+      const mockDispatch = jest.fn();
+      const actionToDispatch = addProjects(projects);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addProjects(projects);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
 
     it('should call dispatch with addPalettes', () => {
