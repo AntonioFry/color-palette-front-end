@@ -66,7 +66,7 @@ export const setCurrentColors = (colors) => ({
   colors
 });
 
-export const lockColor = (id) => ({
-  type: "LOCK_COLOR",
+export const lockingColor = (id) => ({
+  type: "LOCKING_COLOR",
   id
 });
