@@ -16,16 +16,23 @@ constructor() {
 
 saveProject = async (e) => {
   e.preventDefault()
-  try {
-    const project = {name: this.state.projectName}
-    await postProject(project)
-    const projects = await getProjects()
-    this.props.addProjects(projects)
-    this.setState({
-      projectName: ''
-    })
-  } catch(error) {
-    throw new Error(`failed to post: ${error.message}`)
+  const foundProject = this.props.projects.find(project => project.name === this.state.projectName);
+  if (foundProject !== undefined) {
+    console.log(foundProject)
+    return
+  } else {
+    console.log(foundProject)
+    try {
+      const project = {name: this.state.projectName}
+      await postProject(project)
+      const projects = await getProjects()
+      this.props.addProjects(projects)
+      this.setState({
+        projectName: ''
+      })
+    } catch(error) {
+      throw new Error(`failed to post: ${error.message}`)
+    }
   }
 }
 
@@ -58,7 +65,7 @@ handleChange = (e) => {
 }
 
 const mapStateToProps = ({ projects }) => ({
-  projects
+  projects 
 })
 
 const mapDispatchToProps = dispatch => ({
