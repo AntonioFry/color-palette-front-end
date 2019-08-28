@@ -6,9 +6,12 @@ import randomColor from 'randomcolor';
 import './GeneratedColors.css';
 
 export class GeneratedColors extends Component {
+  
+  componentDidMount() {
+    this.generateNewPalette()
+  }
 
-  generateNewPalette = (e) => {
-    e.preventDefault();
+  generateNewPalette = () => {
     const currentColors = [];
     for (let i = 0; i < 5; i++) {
       const newColor = randomColor();

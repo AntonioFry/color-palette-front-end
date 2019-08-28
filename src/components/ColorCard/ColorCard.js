@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './ColorCard.css';
 import { lockingColor } from '../../actions';
 import { connect } from 'react-redux';
