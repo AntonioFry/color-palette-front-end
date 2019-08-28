@@ -18,7 +18,7 @@ constructor() {
 saveProject = async (e) => {
   e.preventDefault()
   const foundProject = this.props.projects.find(project => project.name === this.state.projectName);
-  
+
   if(this.projectName != ''){
     this.setState({
       successMessage: 'Saved!'
@@ -31,16 +31,19 @@ saveProject = async (e) => {
 
   if (foundProject !== undefined) {
     console.log(foundProject)
+    this.setState({
+      projectName: '',
+      successMessage: 'Pick a New Name'
+    })
     return
   } else {
-    console.log(foundProject)
     try {
       const project = {name: this.state.projectName}
       await postProject(project)
       const projects = await getProjects()
       this.props.addProjects(projects)
       this.setState({
-        projectName: ''
+        projectName: '',
       })
     } catch(error) {
       throw new Error(`failed to post: ${error.message}`)
