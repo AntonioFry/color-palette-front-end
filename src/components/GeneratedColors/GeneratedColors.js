@@ -19,11 +19,14 @@ export class GeneratedColors extends Component {
   }
 
   generateNewPalette = () => {
-    const currentColors = [];
-    for (let i = 0; i < 5; i++) {
-      const newColor = randomColor();
-      currentColors.push({ id: i+1, locked: false, newColor });
-    }
+    const currentColors = this.props.currentColors.map(color => {
+      if (color.locked === true) {
+        return color
+      } else {
+        color.newColor = randomColor();
+        return color
+      }
+    })
     this.props.setCurrentColors(currentColors);
   }
 
