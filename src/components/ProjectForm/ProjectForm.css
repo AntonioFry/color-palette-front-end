@@ -3,7 +3,7 @@
   justify-content: center;
   margin: 0px;
   width: 100%;
-  height: 200px;
+  height: 250px;
 }
 
 .project-form-label {
@@ -44,3 +44,18 @@
   font-size: 1.2em;
   color: maroon;
 }
+
+.message {
+  color: maroon;
+  font-size: 1.5em;
+  font-family: "Satisfy"
+}
+
+.orStyle {
+  color: maroon;
+  font-size: 4em;
+  font-family: "Lato";
+  margin-left: 25%;
+  margin-top: 15%;
+}
+

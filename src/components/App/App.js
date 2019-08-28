@@ -29,7 +29,6 @@ export class App extends Component {
         <GeneratedColors/>
         <section className="forms">
           <ProjectForm/>
-          <h3 className="orStyle">OR</h3>
           <PaletteForm/>
         </section>
         {!this.props.palettes.length && 
