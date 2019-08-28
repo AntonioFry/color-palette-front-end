@@ -1,13 +1,13 @@
 .project-color {
   width: 50px;
-  height: 30px;
+  height: 60px;
 }
 
 .project-palette {
   display: flex;
   flex-direction: row;
   margin-top: 1%;
-  min-height: 140px;
+  min-height: 100px;
 }
 
 .project-palette-container {
@@ -33,7 +33,7 @@
   background-color: ghostwhite;
   color: maroon;
   box-shadow: 2px 2px;
-  margin: 0 2%; 
+  margin: 4% 2%; 
   height: 30px;
 }
 
@@ -45,7 +45,7 @@
 .paint {
   position: relative;
   width: 70px;
-  height: 30px;
+  height: 60px;
 }
 .paint:before {
   display: block;
@@ -84,7 +84,8 @@
   transform: rotate(-90deg);
   position: absolute;
   z-index: 100;
-  padding-left: 9%;
+  padding-left: 11%;
+  margin-left: -17px;
 }
 
 .roll {

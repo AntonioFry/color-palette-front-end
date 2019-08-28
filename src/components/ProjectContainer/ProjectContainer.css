@@ -3,7 +3,8 @@
   font-family: "Satisfy";
   font-size: 3em;
   color: maroon;
-  border-bottom: 2px solid rgb(61, 134, 199);
+  border-top: 3px solid rgb(61, 134, 199);
+  padding-top: 25px;
 }
 
 .projects-container {

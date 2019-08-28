@@ -22,11 +22,19 @@
   width: 30px;
   background-color: ghostwhite;
   color: maroon;
-  border-radius: 50%;
+  border-radius: 100%;
+  box-shadow: 2px 2px;
 }
 
-.rmvBtn:focus {
+.rmvBtn:hover {
   background-color: rgb(61, 134, 199);
   outline-color: white;
   color: white;
+}
+
+.noPalettesMessage {
+  color: maroon;
+  font-size: 2em;
+  margin: 10%;
+  font-family: 'Satisfy';
 }
