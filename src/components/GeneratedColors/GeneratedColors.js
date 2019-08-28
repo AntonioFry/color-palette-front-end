@@ -8,7 +8,14 @@ import './GeneratedColors.css';
 export class GeneratedColors extends Component {
   
   componentDidMount() {
-    this.generateNewPalette()
+    const startingColors = [
+      { id: 1, locked: false, newColor: randomColor() },
+      { id: 2, locked: false, newColor: randomColor() },
+      { id: 3, locked: false, newColor: randomColor() },
+      { id: 4, locked: false, newColor: randomColor() },
+      { id: 5, locked: false, newColor: randomColor() }
+    ]
+    this.props.setCurrentColors(startingColors);
   }
 
   generateNewPalette = () => {
