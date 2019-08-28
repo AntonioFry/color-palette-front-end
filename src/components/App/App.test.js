@@ -58,12 +58,26 @@ describe('App', () => {
 
   describe('mapDispatchToProps', () => {
     it('should call dispatch with addProjects', () => {
-      
-       
+      const projects = [
+        { id: 1, name: 'Dog Party' },
+        { id: 2, name: 'Cat Party' },
+        { id: 3, name: 'Something' }
+      ];
+
+
     });
 
     it('should call dispatch with addPalettes', () => {
-
+      const palettes = [
+        { id: 1, palette_name: 'Dog Colors' },
+        { id: 2, palette_name: 'Cat Colors' },
+        { id: 3, palette_name: 'Something' }
+      ];
+      const mockDispatch = jest.fn();
+      const actionToDispatch = addPalettes(palettes);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addPalettes(palettes);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   })
 })
