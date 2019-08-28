@@ -26,7 +26,7 @@ export class Palette extends Component {
           <div className="container project-color">
           <div className="paint" style={{backgroundColor: this.props.color_5}}>
           </div>
-            <div className="roller">
+          <div className="roller">
             <div className="roll" style={{backgroundColor: this.props.color_5}}></div>
             <div className="handle"></div>
             <div className="grip"></div>
