@@ -12,7 +12,7 @@ export class GeneratedColors extends Component {
     const currentColors = [];
     for (let i = 0; i < 5; i++) {
       const newColor = randomColor();
-      currentColors.push(newColor);
+      currentColors.push({ locked: false, newColor });
     }
     this.props.setCurrentColors(currentColors);
   }
@@ -21,7 +21,7 @@ export class GeneratedColors extends Component {
     const colorCards = this.props.currentColors.map((color, i) => {
       return (
       <ColorCard
-        hexValue={color}
+        hexValue={color.newColor}
         key={i + 1}
         id={i + 1}
       /> 
