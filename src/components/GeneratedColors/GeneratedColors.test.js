@@ -16,12 +16,19 @@ describe('GeneratedColors', () => {
         ],
         currentColors: [
           {}
-        ]
+        ],
+        setCurrentColors: jest.fn()
       }
-      wrapper = shallow(<GeneratedColors />)
+      wrapper = shallow(<GeneratedColors
+        currentColors={props.currentColors}
+        palettes={props.palettes}
+        setCurrentColors={props.setCurrentColors}
+      />)
     })
 
-    
+    it('should match the snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    })
   })
 
 })
