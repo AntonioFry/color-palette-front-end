@@ -19,3 +19,31 @@
 .generated-colors-section {
   margin: 10px 0px;
 }
+
+@media only screen and (max-width: 800px) {
+  .color-cards-container {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    width: 70%;
+    margin: 0 10%;
+  }
+  .generate-colors-button {
+    width: 35%;
+    margin: 20px 30%;
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .color-cards-container {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    width: 100%;
+    margin: 0 25%;
+  }
+  .generate-colors-button {
+    width: 80%;
+    height: 60px;
+    margin: 10px 35%;
+  }
+}
+

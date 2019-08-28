@@ -24,5 +24,18 @@ span {
   width: 100%;
 }
 
+@media only screen and (max-width: 670px) {
+  h1 {
+    font-size: 3em;
+    text-align: left;
+  }
+  .forms {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+    margin: 10% 25%;
+  }
+}
+
 
 

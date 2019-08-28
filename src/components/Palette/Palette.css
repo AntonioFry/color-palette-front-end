@@ -176,3 +176,17 @@
   background: #6CB8B4;
   border-radius: 100%;
 }
+
+@media only screen and (max-width: 1024px) {
+.roller {
+    padding-left: 24%;
+    margin-left: -10px;
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .roller {
+  padding-left: 50%;
+  margin-left: -10px;
+  }
+}

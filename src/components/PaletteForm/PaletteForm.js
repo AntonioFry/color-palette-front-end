@@ -67,7 +67,7 @@ export class PaletteForm extends Component {
     return (
       <section className="palette-form-container">
         <form onSubmit={this.savePalette} className="palette-form">
-          <label for="project-selector" className="palette-form-label">Select a Project</label>
+          <label for="project-selector" className="palette-form-label">2. Select a Project</label>
           <select className="project-selector" onChange={this.handleChange} value={this.state.projectName} name="projectName">
             <option value={0} selected>--Select Your Project--</option>
             {projectNames}
