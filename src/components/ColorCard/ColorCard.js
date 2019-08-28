@@ -8,8 +8,8 @@ export const ColorCard = (props) => {
     backgroundColor: props.hexValue,
   }
   const icon = !props.locked ? 
-  <i class="fas fa-lock-open" onClick={() => props.lockingColor(props.id)}></i> : 
-  <i class="fas fa-lock" onClick={() => props.lockingColor(props.id)}></i>;
+  <i className="fas fa-lock-open" onClick={() => props.lockingColor(props.id)}></i> : 
+  <i className="fas fa-lock" onClick={() => props.lockingColor(props.id)}></i>;
 
   return (
     <div style={cardColor} className='color-card'>

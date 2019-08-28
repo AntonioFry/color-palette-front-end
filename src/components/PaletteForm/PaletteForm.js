@@ -10,6 +10,7 @@ export class PaletteForm extends Component {
     this.state = {
       paletteName: '',
       projectName: '',
+      successMessage: ''
     }
   }
 
@@ -34,6 +35,16 @@ export class PaletteForm extends Component {
       })
     } catch (error) {
       throw new Error(`failed to post: ${error.message}`)
+    }
+    
+    if(this.projectName != '' && this.paletteName != ''){
+      this.setState({
+        successMessage: 'Saved!'
+      })
+    } else {
+      this.setState({
+        successMessage: ''
+      })
     }
   }
 
@@ -71,6 +82,7 @@ export class PaletteForm extends Component {
           className="submit-palette-input"
           />
         </form>
+        <p>{this.state.successMessage}</p>
       </section>
     )
   }
