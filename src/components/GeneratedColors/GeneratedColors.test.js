@@ -30,6 +30,11 @@ describe('GeneratedColors', () => {
       wrapper.instance().componentDidMount();
       expect(props.setCurrentColors).toHaveBeenCalled()
     })
+
+    it('should setCurrentColors when generatedNewPalette is called', () => {
+      wrapper.instance().generateNewPalette();
+      expect(props.setCurrentColors).toHaveBeenCalled()
+    })
   })
 
 })
