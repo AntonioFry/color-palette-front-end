@@ -87,7 +87,22 @@ describe('GeneratedColors', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    
+    it('should call dispatch with setCurrentColors', () => {
+      const currentColors = {
+        currentColors: [
+          { id: 1, locked: false, newColor: '#FFFFFF' },
+          { id: 2, locked: false, newColor: '#FFFFFF' },
+          { id: 3, locked: false, newColor: '#FFFFFF' },
+          { id: 4, locked: false, newColor: '#FFFFFF' },
+          { id: 5, locked: false, newColor: '#FFFFFF' },
+        ]
+      }
+      const mockDispatch = jest.fn();
+      const actionToDispatch = setCurrentColors(currentColors);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.setCurrentColors(currentColors);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    })
   })
 
 })
