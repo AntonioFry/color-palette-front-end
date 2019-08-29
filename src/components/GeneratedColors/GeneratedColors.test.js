@@ -59,6 +59,35 @@ describe('GeneratedColors', () => {
       const mappedProps = mapStateToProps(mockStore);
       expect(mappedProps).toEqual(expected);
     });
+
+    it('should return an array of currentColors', () => {
+      const mockStore = {
+        currentColors: [
+          { id: 1, locked: false, newColor: '#FFFFFF' },
+          { id: 2, locked: false, newColor: '#FFFFFF' },
+          { id: 3, locked: false, newColor: '#FFFFFF' },
+          { id: 4, locked: false, newColor: '#FFFFFF' },
+          { id: 5, locked: false, newColor: '#FFFFFF' },
+        ]
+      }
+
+      const expected = {
+        currentColors: [
+          { id: 1, locked: false, newColor: '#FFFFFF' },
+          { id: 2, locked: false, newColor: '#FFFFFF' },
+          { id: 3, locked: false, newColor: '#FFFFFF' },
+          { id: 4, locked: false, newColor: '#FFFFFF' },
+          { id: 5, locked: false, newColor: '#FFFFFF' },
+        ]
+      }
+
+      const mappedProps = mapStateToProps(mockStore);
+      expect(mappedProps).toEqual(expected);
+    })
+  });
+
+  describe('mapDispatchToProps', () => {
+    
   })
 
 })
