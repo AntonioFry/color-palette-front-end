@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { GeneratedColors } from './GeneratedColors';
 import { setCurrentColors } from '../../actions';
+import { mapStateToProps, mapDispatchToProps } from './GeneratedColors';
 
 describe('GeneratedColors', () => {
 
@@ -35,6 +36,29 @@ describe('GeneratedColors', () => {
       wrapper.instance().generateNewPalette();
       expect(props.setCurrentColors).toHaveBeenCalled()
     })
+  })
+
+  describe('mapStateToProps', () => {
+    it('should return an array of palettes', () => {
+      const mockStore = {
+        palettes: [
+          { id: 1, palette_name: 'Dog Colors' },
+          { id: 2, palette_name: 'Cat Colors' },
+          { id: 3, palette_name: 'Something' }
+        ]
+      }
+
+      const expected = {
+        palettes: [
+          { id: 1, palette_name: 'Dog Colors' },
+          { id: 2, palette_name: 'Cat Colors' },
+          { id: 3, palette_name: 'Something' }
+        ]
+      }
+
+      const mappedProps = mapStateToProps(mockStore);
+      expect(mappedProps).toEqual(expected);
+    });
   })
 
 })
