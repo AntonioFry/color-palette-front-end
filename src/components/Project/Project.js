@@ -9,13 +9,14 @@ export function Project(props) {
   const paletteCards = props.palettes.map(palette => {
     return <Palette {...palette} />
   })
+
   return (
     <article className="project">
       <div className="project-name-container">
           <h2 className="project-name">{props.name}</h2>
-          <button className="rmvBtn"onClick={() => deleteProject(props.id, props.removeProject(props.id))}>X</button>
+          <button className="rmvBtn"onClick={() => deleteProject(props.id, props.removeProject(props.id))}><i class="far   fa-trash-alt"></i></button>
       </div>
-      {paletteCards}
+     {!props.palettes.length ? <p className="noPalettesMessage">No Palettes Yet</p> : paletteCards}
     </article>
   )
 }

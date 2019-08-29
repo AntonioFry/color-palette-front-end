@@ -10,25 +10,40 @@ constructor() {
   this.state = {
     projectId: 0,
     projectName: '',
-    paletteName: ''
+    paletteName: '',
+    successMessage: ''
   }
 }
 
 saveProject = async (e) => {
   e.preventDefault()
   const foundProject = this.props.projects.find(project => project.name === this.state.projectName);
+
+  if(this.projectName != ''){
+    this.setState({
+      successMessage: 'Saved!'
+    })
+  } else {
+    this.setState({
+      successMessage: ''
+    })
+  }
+
   if (foundProject !== undefined) {
     console.log(foundProject)
+    this.setState({
+      projectName: '',
+      successMessage: 'Pick a New Name'
+    })
     return
   } else {
-    console.log(foundProject)
     try {
       const project = {name: this.state.projectName}
       await postProject(project)
       const projects = await getProjects()
       this.props.addProjects(projects)
       this.setState({
-        projectName: ''
+        projectName: '',
       })
     } catch(error) {
       throw new Error(`failed to post: ${error.message}`)
@@ -44,7 +59,7 @@ handleChange = (e) => {
     return (
       <section className="project-form-section">
         <form className="project-form" onSubmit={this.saveProject}>
-          <label className="project-form-label" for="project">Create a Project</label>
+          <label className="project-form-label" for="project">1. Create a Project</label>
           <input
           className="project-form-input"
           type="text"
@@ -56,8 +71,7 @@ handleChange = (e) => {
           className="project-form-button"
           type="submit"
           value="Save Project" />
-          {/* <p className="savePaletteMessage">Next: <br/> Select your project and save your palettes</p> should appear after button click */}
-          {/* or change the OR in App to AND */}
+          <p className="message">{this.state.successMessage}</p>
         </form>
       </section>
     )

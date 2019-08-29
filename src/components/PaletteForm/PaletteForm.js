@@ -10,12 +10,24 @@ export class PaletteForm extends Component {
     this.state = {
       paletteName: '',
       projectName: '',
+      successMessage: ''
     }
   }
 
   savePalette = async (e) => {
     const { currentColors } = this.props;
     e.preventDefault()
+
+    if(this.projectName != '' && this.paletteName != ''){
+      this.setState({
+        successMessage: 'Saved!'
+      })
+    } else {
+      this.setState({
+        successMessage: ''
+      })
+    }
+
     try {
       const palette = {
         palette_name: this.state.paletteName,
@@ -39,6 +51,9 @@ export class PaletteForm extends Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+    this.setState({
+      successMessage: ''
+    })
   }
 
   handleSubmit(e) {
@@ -52,7 +67,7 @@ export class PaletteForm extends Component {
     return (
       <section className="palette-form-container">
         <form onSubmit={this.savePalette} className="palette-form">
-          <label for="project-selector" className="palette-form-label">Select a Project</label>
+          <label for="project-selector" className="palette-form-label">2. Select a Project</label>
           <select className="project-selector" onChange={this.handleChange} value={this.state.projectName} name="projectName">
             <option value={0} selected>--Select Your Project--</option>
             {projectNames}
@@ -70,6 +85,7 @@ export class PaletteForm extends Component {
           value="Save Palette"
           className="submit-palette-input"
           />
+           <p className="message">{this.state.successMessage}</p>
         </form>
       </section>
     )

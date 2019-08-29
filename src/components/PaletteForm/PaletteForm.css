@@ -3,7 +3,7 @@
   justify-content: center;
   margin: 0px;
   width: 100%;
-  height: 200px;
+  height: 300px;
 }
 
 .palette-form-label {
@@ -39,3 +39,15 @@
 .submit-palette-input:focus {
   border: 1px solid maroon;
 }
+
+.message {
+  color: maroon;
+  font-size: 1.5em;
+  font-family: "Satisfy"
+}
+
+@media only screen and (max-width: 667px) {
+  .project-selector{
+    width: 500px;
+    }
+  }

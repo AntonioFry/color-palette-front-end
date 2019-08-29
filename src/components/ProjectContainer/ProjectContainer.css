@@ -3,11 +3,34 @@
   font-family: "Satisfy";
   font-size: 3em;
   color: maroon;
-  border-bottom: 2px solid rgb(61, 134, 199);
+  border-top: 3px solid rgb(61, 134, 199);
+  padding-top: 25px;
 }
 
 .projects-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-header {
+    border: 0 solid white;
+    }
+    .projects-container{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+  }
+
+@media only screen and (max-width: 667px) {
+.project-header {
+  border: 0 solid white;
+  }
+  .projects-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
 }
