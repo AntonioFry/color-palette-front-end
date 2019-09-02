@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GeneratedColors GeneratedColors component should match the snapshot 1`] = `
+<section
+  className="generated-colors-section"
+>
+  <div
+    className="color-cards-container"
+  >
+    <Connect(ColorCard) />
+  </div>
+  <button
+    className="generate-colors-button"
+    onClick={[Function]}
+  >
+    Generate New Palette
+  </button>
+</section>
+`;

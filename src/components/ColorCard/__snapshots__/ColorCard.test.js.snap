@@ -15,7 +15,7 @@ exports[`ColorCard ColorCard component should match the snapshot 1`] = `
     #FFFFFF
   </p>
   <i
-    class="fas fa-lock-open"
+    className="fas fa-lock-open"
     onClick={[Function]}
   />
 </div>
