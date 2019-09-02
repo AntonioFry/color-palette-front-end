@@ -104,5 +104,4 @@ describe('GeneratedColors', () => {
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     })
   })
-
 })
